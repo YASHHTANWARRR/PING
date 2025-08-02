@@ -8,6 +8,8 @@
 #include <assert.h>
 #include <errno.h>
 #include <birchutils.h>
+//making the data as small as possible
+#deine packed _attributes((packed));//extra set of attributes 
 
 typedef unsigned char int8;
 typedef unsigned short int int16;
@@ -22,13 +24,22 @@ typedef unsigned long long int int64;
 #define $i (int)
 
 
-struct c_icmp{
-    int8 typ;
+enum e_type{
+    unassi,
+    echo,
+    echoreply
+};
+typedef enum e_type type;
+struct s_rawicmp{
+    int8 type;
     int8 code;
     int16 checksum;
-    int8 data;
-}
-
+    int8 data[];
+}packed;
+struct c_icmp{
+    type kind;
+    int8 *data;
+};
 typedef struct c_icmp icmp ;
 
 icmp * mkicmp(int8,int8,int8*,int16);// type ,code ,data pointer and last is data 

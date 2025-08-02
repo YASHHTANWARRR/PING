@@ -1,5 +1,6 @@
 #include "ping .h"
 
+//to make an icmp address
 icmp *mkicmp(int8 type, int8 code,int8*data,int 16 size){
     int16 n ;
     icmp* p;
@@ -14,7 +15,7 @@ icmp *mkicmp(int8 type, int8 code,int8*data,int 16 size){
 
         p->type = type ;
         p->code = code;
-        memory copy 
+        copy($1 &p->data,data,size);
         p->checksum = checksum(p);//checking the packets for any loss
     }
 
