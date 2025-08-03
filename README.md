@@ -1,6 +1,6 @@
 
 <h1>PING<H1></H1>
-          Creating an IP pavket which recives data on a low level network and then filtering out the packet through checksum reaching our own requirements
+          Creating an IP paCket which recives data on a low level network and then filtering out the packet through checksum reaching our own requirements
 
 Libraries utlisied :
 
