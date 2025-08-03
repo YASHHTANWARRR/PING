@@ -38,21 +38,15 @@ struct s_rawicmp{
 }packed;
 struct c_icmp{
     type kind;
+    int16 size;
     int8 *data;
-};
+}packed;
 typedef struct c_icmp icmp ;
 
 icmp * mkicmp(int8,int8,int8*,int16);// type ,code ,data pointer and last is data 
 
 int main(int,char**);
 
-void copy(int8*dst,int8*src,int16 size){
-    int16 n ;
-    int8 *sptr,*dptr;
+void copy(int8*dst,int8*src,int16 size);
 
-    for (dptr=dst,srptr=src,n = size;n;n--){
-         *dptr++ == *sptr++ ; //intially they are equal but after that both of the pointer jump to the next position
-
-        return;
-    }
-}
+int8 *evalicmp(icmp*);
