@@ -9,7 +9,7 @@
 #include <errno.h>
 #include <birchutils.h>
 //making the data as small as possible
-#deine packed _attributes((packed));//extra set of attributes 
+#deine packed _attribute__((packed));//extra set of attributes 
 
 typedef unsigned char int8;
 typedef unsigned short int int16;
@@ -43,10 +43,19 @@ struct c_icmp{
 }packed;
 typedef struct c_icmp icmp ;
 
-icmp * mkicmp(int8,int8,int8*,int16);// type ,code ,data pointer and last is data 
-
+// icmp * mkicmp(int8,int8,int8*,int16);// type ,code ,data pointer and last is data 
 int main(int,char**);
 
 void copy(int8*dst,int8*src,int16 size);
 
+//icmp 
 int8 *evalicmp(icmp*);
+icmp *mkicmp(type,const int8*,int16);
+void showicmp(icmp*);
+
+
+//going through all of the packet and diving it into 16 bit portions 
+// A,B,C,D  16 BIT PORTIONS 
+//A+B
+//0xab + 0x88 resulting in an 16 bit number  (example)
+int16 checksum(int8*,int16);
