@@ -1,6 +1,6 @@
 
 <h1>PING<H1></H1>
-          Creating an IP paCket which recives data on a low level network and then filtering out the packet through checksum reaching our own requirements
+          Creating an IP packet which recives data on a low level network and then filtering out the packet through checksum reaching our own requirements
 
 Libraries utlisied :
 
@@ -14,7 +14,7 @@ Libraries utlisied :
           -> Utlising the standard template of bash.bs/
      
 
-Optiming the ICMP(Internet Control Message Protocol) for packet trasnfer.
+Optimizing the ICMP(Internet Control Message Protocol) for packet trasnfer.
 
 Semds Icmp 8 ->that is the ping (real name echo)
 Recieves Icmp 0 -> (real name echo reply)
